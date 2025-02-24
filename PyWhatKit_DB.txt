@@ -1,0 +1,55 @@
+Date: 20/2/2025
+Time: 4:25
+Phone Number: +923072770751
+Message: Hello ahamd!
+--------------------
+Date: 20/2/2025
+Time: 4:29
+Phone Number: +923072770751
+Message: Hello from Python!
+--------------------
+Date: 20/2/2025
+Time: 4:30
+Phone Number: +923117220081
+Message: Hello from Python!
+--------------------
+Date: 20/2/2025
+Time: 4:30
+Phone Number: +923072770751
+Message: Hello from Python!
+--------------------
+Date: 20/2/2025
+Time: 4:32
+Phone Number: +923072770751
+Message: Hello from Python!
+--------------------
+Date: 20/2/2025
+Time: 4:32
+Phone Number: +923117220081
+Message: Hello from Python!
+--------------------
+Date: 20/2/2025
+Time: 4:33
+Phone Number: +923072770751
+Message: Hello from Python!
+--------------------
+Date: 20/2/2025
+Time: 4:35
+Phone Number: +923072770751
+Message: Hello from Python! This is a bulk message.
+--------------------
+Date: 20/2/2025
+Time: 15:2
+Phone Number: +923072770751
+Message: Hello from Python!
+--------------------
+Date: 20/2/2025
+Time: 15:3
+Phone Number: +923117220081
+Message: Hello from Python!
+--------------------
+Date: 20/2/2025
+Time: 15:3
+Phone Number: +923072770751
+Message: Hello from Python!
+--------------------
