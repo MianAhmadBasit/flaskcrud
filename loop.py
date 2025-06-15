@@ -5,7 +5,9 @@ for i in range(0,10):
 
 
 sallary  = [1000,2000,3000,4000,5000,6000,7000,8000,9000,10000] ; 
+
 total_sallary = 0 
+
 for sal in sallary:
     total_sallary += sal
 print(f"you sallary is {total_sallary}")

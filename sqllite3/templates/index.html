@@ -1,0 +1,102 @@
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee CRUD App</title>
+  <style>
+    input, button { margin: 5px; }
+    table, td, th { border: 1px solid #333; padding: 5px; border-collapse: collapse; }
+  </style>
+</head>
+<body>
+  <h2>Employee Management</h2>
+
+  <form id="employeeForm">
+    <input type="text" id="name" placeholder="Name" required>
+    <input type="number" id="age" placeholder="Age" required>
+    <input type="text" id="department" placeholder="Department" required>
+    <button type="submit">Add Employee</button>
+  </form>
+
+  <h3>Employee List</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th><th>Name</th><th>Age</th><th>Department</th><th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="employeeTable"></tbody>
+  </table>
+
+  <script>
+    const form = document.getElementById('employeeForm');
+    const table = document.getElementById('employeeTable');
+
+    // Load all employees
+    function loadEmployees() {
+      fetch('http://localhost:5000/api/employees')
+        .then(res => res.json())
+        .then(data => {
+          table.innerHTML = '';
+          data.forEach(emp => {
+            table.innerHTML += `
+              <tr>
+                <td>${emp.id}</td>
+                <td><input value="${emp.name}" id="name-${emp.id}"></td>
+                <td><input value="${emp.age}" id="age-${emp.id}"></td>
+                <td><input value="${emp.department}" id="dept-${emp.id}"></td>
+                <td>
+                  <button onclick="updateEmployee(${emp.id})">Update</button>
+                  <button onclick="deleteEmployee(${emp.id})">Delete</button>
+                </td>
+              </tr>
+            `;
+          });
+        });
+    }
+
+    // Add employee
+    form.onsubmit = e => {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const age = parseInt(document.getElementById('age').value);
+      const department = document.getElementById('department').value;
+
+      fetch('http://localhost:5000/api/employees', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, age, department })
+      })
+      .then(() => {
+        form.reset();
+        loadEmployees();
+      });
+    }
+
+    // Delete employee
+    function deleteEmployee(id) {
+      fetch(`http://localhost:5000/api/employees/${id}`, { method: 'DELETE' })
+        .then(() => loadEmployees());
+    }
+
+    // Update employee
+    function updateEmployee(id) {
+      const name = document.getElementById(`name-${id}`).value;
+      const age = parseInt(document.getElementById(`age-${id}`).value);
+      const department = document.getElementById(`dept-${id}`).value;
+
+      fetch(`http://localhost:5000/api/employees/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, age, department })
+      })
+      .then(() => loadEmployees());
+    }
+
+    loadEmployees(); // Auto load on page load
+  </script>
+
+  
+</body>
+</html>
