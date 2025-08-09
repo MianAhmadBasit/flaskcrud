@@ -5,10 +5,16 @@ from flask_cors import CORS
 
 
 app = Flask(__name__)
+
+
+
 CORS(app)
+
+
 # Database connection
 def get_db_connection():
     conn = sqlite3.connect('mydatabase.db')
+    
     conn.row_factory = sqlite3.Row
     return conn
 

@@ -1,0 +1,3 @@
+Observation: {"data": {"description": "", "name": "Rome Travel Guide", "type": "object"}, "head": {"nodes": [{"data": {"args": {"valueInfo": {"content": "<html><body>Rome is the capital city of Italy and one of the most ancient and historic cities in the world. With a rich history dating back over 2,000 years, Rome offers countless opportunities to explore its past. From the Colosseum to the Vatican Museums, there are numerous landmarks to visit.", "type": "text/html"}}, "contentUrl": null, "displayText": "Rome Travel Guide", "id": "r2l8h0y9k5i1q8"}}}
+
+Action: { "query": "things to do in Rome 2025" }

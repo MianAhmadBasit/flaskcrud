@@ -1,0 +1,1 @@
+Action: {'query': {'description': 'weather forecast Paris 1st March 2025', 'type': 'str'}}
